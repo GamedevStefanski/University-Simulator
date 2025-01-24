@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class Randomizer : MonoBehaviour
+public class Losowanie : MonoBehaviour
 {
-    public InputOutput[] outputFields; 
+    public InputOutputField[] outputFields; 
 
     void Start()
     {
         foreach (var field in outputFields)
         {
             int randomValue = Random.Range(0, 10); 
-            field.SetValue(randomValue);
+            field.SetValue(randomValue, true); 
         }
     }
 }
+

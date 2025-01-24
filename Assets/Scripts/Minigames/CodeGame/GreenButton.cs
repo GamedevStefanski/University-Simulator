@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class CheckButton : MonoBehaviour
+public class GreenButton : MonoBehaviour
 {
-    public InputOutput[] inputFields;
-    public InputOutput[] outputFields;
+    public InputOutputField[] inputFields;
+    public InputOutputField[] outputFields;
 
     public void OnCheckClick()
     {
@@ -11,6 +11,8 @@ public class CheckButton : MonoBehaviour
 
         for (int i = 0; i < inputFields.Length; i++)
         {
+            outputFields[i].RevealValue(); 
+
             if (inputFields[i].value != outputFields[i].value)
             {
                 isCorrect = false;
@@ -28,4 +30,3 @@ public class CheckButton : MonoBehaviour
         }
     }
 }
-
